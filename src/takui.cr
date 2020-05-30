@@ -13,6 +13,7 @@ module Takui
     send_file env, "/Users/william/Documents/takui/images/#{name}"
   end
 
+  # Make sure to fill in Authorization key here 
   post "/upload" do |env|
     new_filename = "default"
     env.response.content_type = "application/json"

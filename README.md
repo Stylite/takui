@@ -1,22 +1,19 @@
 # takui
 
-TODO: Write a description here
+A simple crystal based image host.
 
 ## Installation
 
-TODO: Write installation instructions here
+```bash
+$ git clone https://github.com/stylite/takui
+$ cd takui
+```
+Make sure to fill in the Authorization key for the `/upload` endpoint.
 
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/takui/fork>)
+1. Fork it (<https://github.com/stylite/takui/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -24,4 +21,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [William](https://github.com/your-github-user) - creator and maintainer
+- [Stylite](https://github.com/stylite) - creator and maintainer
