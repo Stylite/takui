@@ -1,0 +1,17 @@
+name: takui
+version: 0.1.0
+
+authors:
+  - William <williamstylite@gmail.com>
+
+targets:
+  takui:
+    main: src/takui.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+crystal: 0.34.0
+
+license: ISC
