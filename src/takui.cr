@@ -1,23 +1,29 @@
 require "kemal"
 require "json"
+require "totem"
 
 module Takui
 
+  conf = Totem.from_file "config.yaml"
+  fp = conf.get("fp")
+  key = conf.get("key")
+  host_url = conf.get("url")
+
   get "/" do |env|
     env.response.content_type = "application/json"
-    {"hello": "world"}.to_json
+    {"hello": "This is Takui, a crystal based image hosting service. Contact links: https://discord.gg/HZP7fUs Github links: https://github.com/Stylite/takui/"}.to_json
   end
   
   get "/:file" do |env|
     name = env.params.url["file"]
-    send_file env, "/Users/william/Documents/takui/images/#{name}"
+    send_file env, "#{fp}#{name}"
   end
 
   # Make sure to fill in Authorization key here 
   post "/upload" do |env|
     new_filename = "default"
     env.response.content_type = "application/json"
-    if env.request.headers["Authorization"] != ""
+    if env.request.headers["Authorization"] != "#{key}"
       resp = {"error": "not authorized"}.to_json
       halt env, status_code: 403, response: resp
     else 
@@ -37,7 +43,7 @@ module Takui
         end
     end 
     end
-    {"url": "localhost:3000/#{new_filename}"}.to_json
+    {"url": "#{host_url}/#{new_filename}"}.to_json
   end
   
   

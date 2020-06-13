@@ -7,8 +7,12 @@ A simple crystal based image host.
 ```bash
 $ git clone https://github.com/stylite/takui
 $ cd takui
+$ shards install
+$ crystal build --release src/takui.cr
+$ export KEMAL_ENV=production # or you can edit in Kemal.config.env = "production"
+$ ./takui
 ```
-Make sure to fill in the Authorization key for the `/upload` endpoint.
+Make sure to fill out a config.yaml file. An example is placed here [Config](https://github.com/stylite/takui/blob/master/config.example.yaml)
 
 
 ## Contributing
